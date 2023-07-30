@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* top, bottom, left, right don't work */
+        .static {
+            position: static;
+            border: 1px solid blue;
+            background-color: lightblue;
+            top: 50px;
+            left: 50px;
+        }
+
+        /* space reserved for the element remains unchanged */
+        .relative1 {
+            position: relative;
+            border: 1px solid orangered;
+            background-color: orange;
+            top: 30px;
+            left: 30px;
+            width: 150px;
+            height: 50px;
+            z-index: 1;
+        }
+
+        /* space reserved for the element remains unchanged */
+        .relative2 {
+            position: relative;
+            border: 1px solid orange;
+            background-color: yellow;
+            top: -130px;
+            left: 50px;
+            width: 150px;
+            height: 50px;
+            z-index: 2;
+        }
+
+        /* parent position changed to relative (other than static) */
+        .non-static-parent {
+            position: relative;
+        }
+
+        /* space reserved for the absolute element is removed */
+        /* positioning is done relative to the youngest ancestor that is not static or body */
+        /* width of absolute element is adjusted according to the size of the element */
+        .absolute {
+            position: absolute;
+            border: 1px solid green;
+            background-color: lightgreen;
+            top: 0px;
+            left: 0px;
+        }
+
+        /* space reserved for fixed element is removed */
+        /* positioning is done relative to the page */
+        /* width of absolute element is adjusted according to the size of the element */
+        .fixed {
+            position: fixed;
+            border: 1px solid grey;
+            background-color: lightgrey;
+            top: -16px;
+            right: 0;
+        }
+
+        /* sticks to the indicated position */
+        .sticky {
+            position: sticky;
+            top: 0;
+            border: 1px solid darkmagenta;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <h2>Subtitle</h2>
+    <section class="non-static-parent">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="static">{ position:static; }</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="relative1">{ position: relative; z-index: 1; }</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="relative2">{ position: relative; z-index: 2; }</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="absolute">{ position: absolute; }</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="fixed">{ position: fixed; }</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, laboriosam vitae ullam illo officia ex aspernatur aperiam consectetur, repellendus neque ea hic nemo. Quidem tenetur cumque id nostrum impedit sed aperiam corporis, laboriosam maxime beatae alias architecto consequatur consectetur vel harum voluptatem dolor atque eum accusantium veniam, voluptates eligendi? Veritatis.</p>
+        <p class="sticky">{ position: sticky; }</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At expedita, labore tempora beatae impedit dolor qui itaque a non. Rem aperiam quo similique laudantium dolorem autem aspernatur tenetur iusto minus voluptatibus facilis vero voluptates, sed delectus quis enim molestias eveniet eaque! Fugit fuga velit consequuntur magnam quibusdam expedita repudiandae, obcaecati unde id consectetur voluptas quasi voluptatibus dolorum similique repellat ratione ad? Quibusdam dolores, vel quos, impedit aperiam facilis expedita velit autem temporibus animi ratione accusantium corporis eius rem at veritatis alias voluptatibus cum! Dolore, cum mollitia! Nisi, fuga nam! Voluptatibus tempora asperiores hic soluta veritatis totam ea voluptatum doloribus veniam sapiente? Autem non quis quaerat modi corporis voluptatem nemo dolorem reiciendis blanditiis totam hic ipsum aut nisi aperiam, voluptatum pariatur unde molestiae veniam repudiandae est tenetur nam iste aspernatur odit. Architecto voluptates modi quasi magni rem eaque iure est eos eius laudantium. Reprehenderit, ut debitis provident dolore ipsa hic accusantium iure voluptas voluptatem at illo officiis, quia autem, consequuntur quam a illum eaque? Debitis ex illum non, obcaecati explicabo deleniti sapiente sed suscipit nobis, laborum reiciendis voluptate. Earum quis praesentium quia veritatis sint voluptatum tempore. Obcaecati, ducimus consequatur. Consequuntur, qui animi deserunt eligendi alias quasi, unde minima excepturi dicta error nulla sapiente, ullam fuga accusantium provident tempore veniam molestiae libero quam deleniti eius quos natus minus. Ad, minus omnis atque in perspiciatis odit autem facilis ipsum ratione, qui, dolore fuga ex recusandae saepe repellat vel quisquam quaerat temporibus soluta? Laudantium, aperiam vero. Nostrum iste, autem rerum sed quidem nemo provident eveniet animi ea eos odit dolore, ullam dolorem natus in, adipisci id repellendus qui dignissimos suscipit repudiandae beatae! Nam, voluptatibus! Nisi praesentium omnis suscipit nobis incidunt iure blanditiis distinctio veritatis. Autem qui omnis porro ratione recusandae, ullam natus mollitia, adipisci rem fugit doloremque soluta unde animi laborum, possimus fuga nostrum quibusdam pariatur et! Doloremque necessitatibus ducimus reiciendis quam officia totam blanditiis tempore at, doloribus placeat illo accusantium, perspiciatis repellat. Ipsam ducimus nihil, itaque quos unde praesentium similique accusamus iusto totam ab repellat sapiente excepturi fuga architecto quidem doloribus fugit maxime, in laborum deserunt exercitationem. Consectetur perferendis reiciendis atque. Ducimus exercitationem ab id similique sint odio recusandae expedita, fuga sed, facere sapiente. Ea, tempora culpa! Sunt, cumque cupiditate. Mollitia modi vitae omnis expedita ducimus voluptatum recusandae placeat porro, non animi autem, laborum vero sunt, veniam asperiores? Maiores dicta tempora numquam consequuntur at quasi excepturi quis velit ratione perspiciatis quaerat, similique error veniam est molestiae aliquam cupiditate, blanditiis distinctio hic possimus! Odit dolor, impedit quae totam explicabo consectetur vitae cupiditate molestias possimus suscipit. Aliquam tempore fugit magni quae eveniet cum illum voluptatibus repellat, sapiente minus, asperiores, accusamus dolorem provident quia consequatur? Reiciendis sit repellendus explicabo ratione provident officiis similique eveniet voluptatem minus at animi commodi obcaecati dolores vero esse, velit sapiente rem nihil inventore earum tenetur dolor! Facere enim tempore reprehenderit, laudantium accusantium harum cum fugit iusto vero tenetur officiis doloremque omnis expedita eum consequatur exercitationem nihil, mollitia, deleniti ea sit minima voluptates quis! Vel saepe dignissimos obcaecati odit doloribus consequatur aliquid.</p>
+   
+    </section>
+</body>
+</html>
